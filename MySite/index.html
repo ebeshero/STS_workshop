@@ -1,4 +1,4 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
     <html lang="en">
         
         <head>
@@ -6,11 +6,21 @@
             <meta charset="utf-8"/>
                 <meta name="description" content="A static site for my TEI"/>
                     <meta name="author" content="Me"/>
+            <script src="js/CETEI.js"></script>
+            <link rel="stylesheet" href="css/CETEIcean.css"/>
         </head>
         
         <body>
             <script src="js/scripts.js"></script>
-            Tester Index Page
+            This is an experimental publication of Mary Russell Mitford's play, <i>Rienzi</i>, with CETEIcean. Note that we need to install something more from <a href="http://teic.github.io/CETEIcean/">Hugh Cayless's CETEIcean repo</a> to publish the app/crit markup on this play 
+            <div id="TEI"></div>
+            <script>
+     var CETEIcean = new CETEI()
+     CETEIcean.getHTML5('data/Rienzi_ebb.xml', function(data) {
+        document.getElementById("TEI").appendChild(data)
+     })
+
+  </script>
         </body>
         
     </html>
